@@ -1,13 +1,23 @@
 # Desmond → AMBER Trajectory Converter  
-Convert Desmond `.cms` trajectory files to AMBER `mdcrd` format.
-
-This script uses Schrödinger Desmond's internal Python API to load a CMS model and trajectory frames and then exports the coordinates as an AMBER-compatible MDCRD file.
+Convert trajectories generated using **open-source Desmond (D. E. Shaw Research)** into AMBER `mdcrd` format.
 
 ---
 
-## 📦 Requirements
+## 📌 About This Script
 
-You must run this script **inside a Schrödinger environment** (tested on 2020-1):
+This script is written **specifically for the open-source Desmond MD simulation package** developed by **D. E. Shaw Research**.  
+👉 It **does not require** the commercial Schrödinger Suite and **does not use any proprietary Schrödinger-only APIs**.
 
-```bash
-$SCHRODINGER/run python trj_convert.py
+The code uses only the Python modules that are part of the **open Desmond distribution**, such as:
+
+- `desmond.packages.topo`
+- `desmond.packages.traj`
+- `desmond.packages.traj_util`
+
+So the script is safe to use with:
+
+✔ Open-source Desmond from D. E. Shaw Research  
+✔ Any Linux build where Desmond’s Python API is available  
+
+---
+
