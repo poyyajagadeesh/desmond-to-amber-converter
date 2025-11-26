@@ -1,23 +1,34 @@
-# Desmond → AMBER Trajectory Converter  
-Convert trajectories generated using **open-source Desmond (D. E. Shaw Research)** into AMBER `mdcrd` format.
+# Desmond-to-AMBER Trajectory Converter  
+Convert open-source **Desmond** trajectories into **AMBER-compatible MDCRD** format for downstream analysis, including **MMPBSA.py**, CPPTRAJ, and related AMBER tools.
 
 ---
 
-## 📌 About This Script
+## Background
 
-This script is written **specifically for the open-source Desmond MD simulation package** developed by **D. E. Shaw Research**.  
-👉 It **does not require** the commercial Schrödinger Suite and **does not use any proprietary Schrödinger-only APIs**.
+The **open-source Desmond MD package** developed by **D. E. Shaw Research (DESRES)** generates trajectory data in proprietary CMS/TRJ formats.  
+Although these formats work seamlessly with the Desmond analysis tools, they are **not directly compatible** with:
 
-The code uses only the Python modules that are part of the **open Desmond distribution**, such as:
+- AMBER’s **MMPBSA.py**  
+- **CPPTRAJ / PyTraj**  
+- GROMACS/AMBER post-processing workflows  
+- Free energy and decomposition tools that expect **AMBER-style coordinates**
 
-- `desmond.packages.topo`
-- `desmond.packages.traj`
-- `desmond.packages.traj_util`
+Because of this incompatibility, anyone wishing to perform **MM-PBSA**, binding energy analysis, clustering, RMSD, PCA, hydrogen-bond analysis, etc., must **first convert the Desmond trajectory into a standard AMBER-readable file**.
 
-So the script is safe to use with:
-
-✔ Open-source Desmond from D. E. Shaw Research  
-✔ Any Linux build where Desmond’s Python API is available  
+This script solves that problem.
 
 ---
+
+##What This Script Does
+
+This Python script:
+
+✔ Reads a Desmond `.cms` file and associated trajectory frames  
+✔ Uses **open-source Desmond Python APIs only**  
+✔ Extracts physical atoms and maps internal indices correctly  
+✔ Builds a full coordinate series for all frames  
+✔ Writes a clean, AMBER-compatible **MDCRD** file  
+✔ Preserves correct atom ordering suitable for MMPBSA calculations  
+
+Output:
 
