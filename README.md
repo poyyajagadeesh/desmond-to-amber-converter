@@ -30,4 +30,5 @@ Writes a clean, AMBER-compatible **MDCRD** file
 Preserves correct atom ordering suitable for MMPBSA calculations  
 
 Output:
+# amber_trj.mdcrd
 
