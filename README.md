@@ -17,18 +17,17 @@ Because of this incompatibility, anyone wishing to perform **MM-PBSA**, binding 
 
 This script solves that problem.
 
----
 
-##What This Script Does
+## What This Script Does
 
 This Python script:
 
-✔ Reads a Desmond `.cms` file and associated trajectory frames  
-✔ Uses **open-source Desmond Python APIs only**  
-✔ Extracts physical atoms and maps internal indices correctly  
-✔ Builds a full coordinate series for all frames  
-✔ Writes a clean, AMBER-compatible **MDCRD** file  
-✔ Preserves correct atom ordering suitable for MMPBSA calculations  
+Reads a Desmond `.cms` file and associated trajectory frames  
+Uses **open-source Desmond Python APIs only**  
+Extracts physical atoms and maps internal indices correctly  
+Builds a full coordinate series for all frames  
+Writes a clean, AMBER-compatible **MDCRD** file  
+Preserves correct atom ordering suitable for MMPBSA calculations  
 
 Output:
 
